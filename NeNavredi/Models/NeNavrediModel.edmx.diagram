@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c36fc6963da044d4b3d4b3eee9ecd349" Name="Diagram1">
+        <EntityTypeShape EntityType="NeNavrediModel.Address" Width="1.5" PointX="0.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="NeNavrediModel.Admin" Width="1.5" PointX="3" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NeNavrediModel.Bookkeeper" Width="1.5" PointX="3" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="NeNavrediModel.BookkeeperBill" Width="1.5" PointX="5.25" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="NeNavrediModel.City" Width="1.5" PointX="1.5" PointY="23.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="NeNavrediModel.Client" Width="1.5" PointX="5.25" PointY="13.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="NeNavrediModel.CompleteService" Width="1.5" PointX="10.25" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="NeNavrediModel.Country" Width="1.5" PointX="1.5" PointY="26.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="NeNavrediModel.Employee" Width="1.5" PointX="3" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="NeNavrediModel.EnterHistory" Width="1.5" PointX="3" PointY="13.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="NeNavrediModel.ExplorerEmployee" Width="1.5" PointX="3" PointY="16.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="NeNavrediModel.Order" Width="1.5" PointX="7.5" PointY="15.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="NeNavrediModel.OrderService" Width="1.5" PointX="9.75" PointY="17.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="NeNavrediModel.Organisation" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NeNavrediModel.Recycler" Width="1.5" PointX="5.75" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="NeNavrediModel.RecyclerWork" Width="1.5" PointX="8" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="NeNavrediModel.Service" Width="1.5" PointX="3.75" PointY="20.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="NeNavrediModel.SocialSecType" Width="1.5" PointX="3" PointY="29.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="NeNavrediModel.StatusId" Width="1.5" PointX="5.25" PointY="24.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="NeNavrediModel.Street" Width="1.5" PointX="1.5" PointY="20.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="NeNavrediModel.User" Width="1.5" PointX="0.75" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="NeNavrediModel.UserService" Width="1.5" PointX="6" PointY="10.5" IsExpanded="true" />
+        <AssociationConnector Association="NeNavrediModel.FK_Address_Street" ManuallyRouted="false" />
+        <AssociationConnector Association="NeNavrediModel.FK_Organisation_Address" ManuallyRouted="false" />
+        <AssociationConnector Association="NeNavrediModel.FK_Admin_User" ManuallyRouted="false" />
+        <AssociationConnector Association="NeNavrediModel.FK_Bookkeeper_User" ManuallyRouted="false" />
+        <AssociationConnector Association="NeNavrediModel.FK_BookkeeperBill_Bookkeeper" ManuallyRouted="false" />
+        <AssociationConnector Association="NeNavrediModel.FK_BookkeeperBill_Organisation" ManuallyRouted="false" />
+        <AssociationConnector Association="NeNavrediModel.FK_City_Country" ManuallyRouted="false" />
+        <AssociationConnector Association="NeNavrediModel.FK_Street_City" ManuallyRouted="false" />
+        <AssociationConnector Association="NeNavrediModel.FK_Client_Country" ManuallyRouted="false" />
+        <AssociationConnector Association="NeNavrediModel.FK_Client_Organisation" ManuallyRouted="false" />
+        <AssociationConnector Association="NeNavrediModel.FK_Client_SocialSecType" ManuallyRouted="false" />
+        <AssociationConnector Association="NeNavrediModel.FK_Order_Client" ManuallyRouted="false" />
+        <AssociationConnector Association="NeNavrediModel.FK_CompleteService_RecyclerWork" ManuallyRouted="false" />
+        <AssociationConnector Association="NeNavrediModel.FK_CompleteService_Service" ManuallyRouted="false" />
+        <AssociationConnector Association="NeNavrediModel.FK_Employee_User" ManuallyRouted="false" />
+        <AssociationConnector Association="NeNavrediModel.FK_EnterHistory_User" ManuallyRouted="false" />
+        <AssociationConnector Association="NeNavrediModel.FK_ExplorerEmployee_User" ManuallyRouted="false" />
+        <AssociationConnector Association="NeNavrediModel.FK_Order_StatusId" ManuallyRouted="false" />
+        <AssociationConnector Association="NeNavrediModel.FK_OrderService_Order" ManuallyRouted="false" />
+        <AssociationConnector Association="NeNavrediModel.FK_OrderService_Service" ManuallyRouted="false" />
+        <AssociationConnector Association="NeNavrediModel.FK_OrderService_StatusId" ManuallyRouted="false" />
+        <AssociationConnector Association="NeNavrediModel.FK_RecyclerWork_Recycler" ManuallyRouted="false" />
+        <AssociationConnector Association="NeNavrediModel.FK_UserService_Service" ManuallyRouted="false" />
+        <AssociationConnector Association="NeNavrediModel.FK_UserService_User" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
