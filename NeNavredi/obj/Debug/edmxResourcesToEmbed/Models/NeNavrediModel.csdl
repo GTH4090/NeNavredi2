@@ -1,0 +1,683 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="NeNavrediModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Address">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HouseNum" Type="Int32" Nullable="false" />
+    <Property Name="StreetId" Type="Int32" Nullable="false" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <NavigationProperty Name="Street" Relationship="Self.FK_Address_Street" FromRole="Address" ToRole="Street" />
+    <NavigationProperty Name="Organisation" Relationship="Self.FK_Organisation_Address" FromRole="Address" ToRole="Organisation" />
+  </EntityType>
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <NavigationProperty Name="User" Relationship="Self.FK_Admin_User" FromRole="Admin" ToRole="User" />
+  </EntityType>
+  <EntityType Name="Bookkeeper">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Patromonic" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <NavigationProperty Name="User" Relationship="Self.FK_Bookkeeper_User" FromRole="Bookkeeper" ToRole="User" />
+    <NavigationProperty Name="BookkeeperBill" Relationship="Self.FK_BookkeeperBill_Bookkeeper" FromRole="Bookkeeper" ToRole="BookkeeperBill" />
+  </EntityType>
+  <EntityType Name="BookkeeperBill">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BookkeeperId" Type="Int32" Nullable="false" />
+    <Property Name="OrganisationId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Bookkeeper" Relationship="Self.FK_BookkeeperBill_Bookkeeper" FromRole="BookkeeperBill" ToRole="Bookkeeper" />
+    <NavigationProperty Name="Organisation" Relationship="Self.FK_BookkeeperBill_Organisation" FromRole="BookkeeperBill" ToRole="Organisation" />
+  </EntityType>
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CountryId" Type="Int32" Nullable="false" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <NavigationProperty Name="Country" Relationship="Self.FK_City_Country" FromRole="City" ToRole="Country" />
+    <NavigationProperty Name="Street" Relationship="Self.FK_Street_City" FromRole="City" ToRole="Street" />
+  </EntityType>
+  <EntityType Name="Client">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Patronomic" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BirthDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="PassportNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PassportSerial" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="OrganisationId" Type="Int32" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CountryId" Type="Int32" />
+    <Property Name="Guid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Ein" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SocialSecNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SecialSecTypeId" Type="Int32" />
+    <Property Name="IpAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Ua" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <NavigationProperty Name="Country" Relationship="Self.FK_Client_Country" FromRole="Client" ToRole="Country" />
+    <NavigationProperty Name="Organisation" Relationship="Self.FK_Client_Organisation" FromRole="Client" ToRole="Organisation" />
+    <NavigationProperty Name="SocialSecType" Relationship="Self.FK_Client_SocialSecType" FromRole="Client" ToRole="SocialSecType" />
+    <NavigationProperty Name="Order" Relationship="Self.FK_Order_Client" FromRole="Client" ToRole="Order" />
+  </EntityType>
+  <EntityType Name="CompleteService">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ServiceId" Type="Int32" Nullable="false" />
+    <Property Name="date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="RecyclerWorkId" Type="Int32" Nullable="false" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <NavigationProperty Name="RecyclerWork" Relationship="Self.FK_CompleteService_RecyclerWork" FromRole="CompleteService" ToRole="RecyclerWork" />
+    <NavigationProperty Name="Service" Relationship="Self.FK_CompleteService_Service" FromRole="CompleteService" ToRole="Service" />
+  </EntityType>
+  <EntityType Name="Country">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <NavigationProperty Name="City" Relationship="Self.FK_City_Country" FromRole="Country" ToRole="City" />
+    <NavigationProperty Name="Client" Relationship="Self.FK_Client_Country" FromRole="Country" ToRole="Client" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Patronomic" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <NavigationProperty Name="User" Relationship="Self.FK_Employee_User" FromRole="Employee" ToRole="User" />
+  </EntityType>
+  <EntityType Name="EnterHistory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" />
+    <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IpAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Succes" Type="Boolean" Nullable="false" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <NavigationProperty Name="User" Relationship="Self.FK_EnterHistory_User" FromRole="EnterHistory" ToRole="User" />
+  </EntityType>
+  <EntityType Name="ExplorerEmployee">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Patronomic" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <NavigationProperty Name="User" Relationship="Self.FK_ExplorerEmployee_User" FromRole="ExplorerEmployee" ToRole="User" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="StatusId" Type="Int32" Nullable="false" />
+    <Property Name="Time" Type="Int32" Nullable="false" />
+    <Property Name="ClientId" Type="Int32" Nullable="false" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <NavigationProperty Name="Client" Relationship="Self.FK_Order_Client" FromRole="Order" ToRole="Client" />
+    <NavigationProperty Name="StatusId1" Relationship="Self.FK_Order_StatusId" FromRole="Order" ToRole="StatusId" />
+    <NavigationProperty Name="OrderService" Relationship="Self.FK_OrderService_Order" FromRole="Order" ToRole="OrderService" />
+  </EntityType>
+  <EntityType Name="OrderService">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OrderId" Type="Int32" Nullable="false" />
+    <Property Name="ServiceId" Type="Int32" Nullable="false" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="StatusId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Order" Relationship="Self.FK_OrderService_Order" FromRole="OrderService" ToRole="Order" />
+    <NavigationProperty Name="Service" Relationship="Self.FK_OrderService_Service" FromRole="OrderService" ToRole="Service" />
+    <NavigationProperty Name="StatusId1" Relationship="Self.FK_OrderService_StatusId" FromRole="OrderService" ToRole="StatusId" />
+  </EntityType>
+  <EntityType Name="Organisation">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AddressId" Type="Int32" Nullable="false" />
+    <Property Name="Tin" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Bill" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Bik" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <NavigationProperty Name="Address" Relationship="Self.FK_Organisation_Address" FromRole="Organisation" ToRole="Address" />
+    <NavigationProperty Name="BookkeeperBill" Relationship="Self.FK_BookkeeperBill_Organisation" FromRole="Organisation" ToRole="BookkeeperBill" />
+    <NavigationProperty Name="Client" Relationship="Self.FK_Client_Organisation" FromRole="Organisation" ToRole="Client" />
+  </EntityType>
+  <EntityType Name="Recycler">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <NavigationProperty Name="RecyclerWork" Relationship="Self.FK_RecyclerWork_Recycler" FromRole="Recycler" ToRole="RecyclerWork" />
+  </EntityType>
+  <EntityType Name="RecyclerWork">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RecyclerId" Type="Int32" Nullable="false" />
+    <Property Name="DateStart" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="DateEnd" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <NavigationProperty Name="CompleteService" Relationship="Self.FK_CompleteService_RecyclerWork" FromRole="RecyclerWork" ToRole="CompleteService" />
+    <NavigationProperty Name="Recycler" Relationship="Self.FK_RecyclerWork_Recycler" FromRole="RecyclerWork" ToRole="Recycler" />
+  </EntityType>
+  <EntityType Name="Service">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Price" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Time" Type="Time" Nullable="false" Precision="7" />
+    <Property Name="AvarageDeviation" Type="Double" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <NavigationProperty Name="CompleteService" Relationship="Self.FK_CompleteService_Service" FromRole="Service" ToRole="CompleteService" />
+    <NavigationProperty Name="OrderService" Relationship="Self.FK_OrderService_Service" FromRole="Service" ToRole="OrderService" />
+    <NavigationProperty Name="UserService" Relationship="Self.FK_UserService_Service" FromRole="Service" ToRole="UserService" />
+  </EntityType>
+  <EntityType Name="SocialSecType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <NavigationProperty Name="Client" Relationship="Self.FK_Client_SocialSecType" FromRole="SocialSecType" ToRole="Client" />
+  </EntityType>
+  <EntityType Name="StatusId">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Order" Relationship="Self.FK_Order_StatusId" FromRole="StatusId" ToRole="Order" />
+    <NavigationProperty Name="OrderService" Relationship="Self.FK_OrderService_StatusId" FromRole="StatusId" ToRole="OrderService" />
+  </EntityType>
+  <EntityType Name="Street">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CityId" Type="Int32" Nullable="false" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <NavigationProperty Name="Address" Relationship="Self.FK_Address_Street" FromRole="Street" ToRole="Address" />
+    <NavigationProperty Name="City" Relationship="Self.FK_Street_City" FromRole="Street" ToRole="City" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <NavigationProperty Name="Admin" Relationship="Self.FK_Admin_User" FromRole="User" ToRole="Admin" />
+    <NavigationProperty Name="Bookkeeper" Relationship="Self.FK_Bookkeeper_User" FromRole="User" ToRole="Bookkeeper" />
+    <NavigationProperty Name="Employee" Relationship="Self.FK_Employee_User" FromRole="User" ToRole="Employee" />
+    <NavigationProperty Name="EnterHistory" Relationship="Self.FK_EnterHistory_User" FromRole="User" ToRole="EnterHistory" />
+    <NavigationProperty Name="ExplorerEmployee" Relationship="Self.FK_ExplorerEmployee_User" FromRole="User" ToRole="ExplorerEmployee" />
+    <NavigationProperty Name="UserService" Relationship="Self.FK_UserService_User" FromRole="User" ToRole="UserService" />
+  </EntityType>
+  <EntityType Name="UserService">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="ServiceId" Type="Int32" Nullable="false" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Service" Relationship="Self.FK_UserService_Service" FromRole="UserService" ToRole="Service" />
+    <NavigationProperty Name="User" Relationship="Self.FK_UserService_User" FromRole="UserService" ToRole="User" />
+  </EntityType>
+  <Association Name="FK_Address_Street">
+    <End Role="Street" Type="Self.Street" Multiplicity="1" />
+    <End Role="Address" Type="Self.Address" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Street">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Address">
+        <PropertyRef Name="StreetId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Organisation_Address">
+    <End Role="Address" Type="Self.Address" Multiplicity="1" />
+    <End Role="Organisation" Type="Self.Organisation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Address">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Organisation">
+        <PropertyRef Name="AddressId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Admin_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Admin" Type="Self.Admin" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Admin">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Bookkeeper_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Bookkeeper" Type="Self.Bookkeeper" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Bookkeeper">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BookkeeperBill_Bookkeeper">
+    <End Role="Bookkeeper" Type="Self.Bookkeeper" Multiplicity="1" />
+    <End Role="BookkeeperBill" Type="Self.BookkeeperBill" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bookkeeper">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BookkeeperBill">
+        <PropertyRef Name="BookkeeperId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BookkeeperBill_Organisation">
+    <End Role="Organisation" Type="Self.Organisation" Multiplicity="1" />
+    <End Role="BookkeeperBill" Type="Self.BookkeeperBill" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Organisation">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BookkeeperBill">
+        <PropertyRef Name="OrganisationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_City_Country">
+    <End Role="Country" Type="Self.Country" Multiplicity="1" />
+    <End Role="City" Type="Self.City" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="City">
+        <PropertyRef Name="CountryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Street_City">
+    <End Role="City" Type="Self.City" Multiplicity="1" />
+    <End Role="Street" Type="Self.Street" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Street">
+        <PropertyRef Name="CityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Client_Country">
+    <End Role="Country" Type="Self.Country" Multiplicity="0..1" />
+    <End Role="Client" Type="Self.Client" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Client">
+        <PropertyRef Name="CountryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Client_Organisation">
+    <End Role="Organisation" Type="Self.Organisation" Multiplicity="0..1" />
+    <End Role="Client" Type="Self.Client" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Organisation">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Client">
+        <PropertyRef Name="OrganisationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Client_SocialSecType">
+    <End Role="SocialSecType" Type="Self.SocialSecType" Multiplicity="0..1" />
+    <End Role="Client" Type="Self.Client" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SocialSecType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Client">
+        <PropertyRef Name="SecialSecTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order_Client">
+    <End Role="Client" Type="Self.Client" Multiplicity="1" />
+    <End Role="Order" Type="Self.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="ClientId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CompleteService_RecyclerWork">
+    <End Role="RecyclerWork" Type="Self.RecyclerWork" Multiplicity="1" />
+    <End Role="CompleteService" Type="Self.CompleteService" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RecyclerWork">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CompleteService">
+        <PropertyRef Name="RecyclerWorkId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CompleteService_Service">
+    <End Role="Service" Type="Self.Service" Multiplicity="1" />
+    <End Role="CompleteService" Type="Self.CompleteService" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Service">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CompleteService">
+        <PropertyRef Name="ServiceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employee_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EnterHistory_User">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="EnterHistory" Type="Self.EnterHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EnterHistory">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ExplorerEmployee_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="ExplorerEmployee" Type="Self.ExplorerEmployee" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ExplorerEmployee">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order_StatusId">
+    <End Role="StatusId" Type="Self.StatusId" Multiplicity="1" />
+    <End Role="Order" Type="Self.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StatusId">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="StatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderService_Order">
+    <End Role="Order" Type="Self.Order" Multiplicity="1" />
+    <End Role="OrderService" Type="Self.OrderService" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OrderService">
+        <PropertyRef Name="OrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderService_Service">
+    <End Role="Service" Type="Self.Service" Multiplicity="1" />
+    <End Role="OrderService" Type="Self.OrderService" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Service">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OrderService">
+        <PropertyRef Name="ServiceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderService_StatusId">
+    <End Role="StatusId" Type="Self.StatusId" Multiplicity="1" />
+    <End Role="OrderService" Type="Self.OrderService" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StatusId">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OrderService">
+        <PropertyRef Name="StatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RecyclerWork_Recycler">
+    <End Role="Recycler" Type="Self.Recycler" Multiplicity="1" />
+    <End Role="RecyclerWork" Type="Self.RecyclerWork" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Recycler">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RecyclerWork">
+        <PropertyRef Name="RecyclerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserService_Service">
+    <End Role="Service" Type="Self.Service" Multiplicity="1" />
+    <End Role="UserService" Type="Self.UserService" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Service">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserService">
+        <PropertyRef Name="ServiceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserService_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="UserService" Type="Self.UserService" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserService">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="NeNavrediEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Address" EntityType="Self.Address" />
+    <EntitySet Name="Admin" EntityType="Self.Admin" />
+    <EntitySet Name="Bookkeeper" EntityType="Self.Bookkeeper" />
+    <EntitySet Name="BookkeeperBill" EntityType="Self.BookkeeperBill" />
+    <EntitySet Name="City" EntityType="Self.City" />
+    <EntitySet Name="Client" EntityType="Self.Client" />
+    <EntitySet Name="CompleteService" EntityType="Self.CompleteService" />
+    <EntitySet Name="Country" EntityType="Self.Country" />
+    <EntitySet Name="Employee" EntityType="Self.Employee" />
+    <EntitySet Name="EnterHistory" EntityType="Self.EnterHistory" />
+    <EntitySet Name="ExplorerEmployee" EntityType="Self.ExplorerEmployee" />
+    <EntitySet Name="Order" EntityType="Self.Order" />
+    <EntitySet Name="OrderService" EntityType="Self.OrderService" />
+    <EntitySet Name="Organisation" EntityType="Self.Organisation" />
+    <EntitySet Name="Recycler" EntityType="Self.Recycler" />
+    <EntitySet Name="RecyclerWork" EntityType="Self.RecyclerWork" />
+    <EntitySet Name="Service" EntityType="Self.Service" />
+    <EntitySet Name="SocialSecType" EntityType="Self.SocialSecType" />
+    <EntitySet Name="StatusId" EntityType="Self.StatusId" />
+    <EntitySet Name="Street" EntityType="Self.Street" />
+    <EntitySet Name="User" EntityType="Self.User" />
+    <EntitySet Name="UserService" EntityType="Self.UserService" />
+    <AssociationSet Name="FK_Address_Street" Association="Self.FK_Address_Street">
+      <End Role="Street" EntitySet="Street" />
+      <End Role="Address" EntitySet="Address" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Organisation_Address" Association="Self.FK_Organisation_Address">
+      <End Role="Address" EntitySet="Address" />
+      <End Role="Organisation" EntitySet="Organisation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Admin_User" Association="Self.FK_Admin_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Admin" EntitySet="Admin" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Bookkeeper_User" Association="Self.FK_Bookkeeper_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Bookkeeper" EntitySet="Bookkeeper" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BookkeeperBill_Bookkeeper" Association="Self.FK_BookkeeperBill_Bookkeeper">
+      <End Role="Bookkeeper" EntitySet="Bookkeeper" />
+      <End Role="BookkeeperBill" EntitySet="BookkeeperBill" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BookkeeperBill_Organisation" Association="Self.FK_BookkeeperBill_Organisation">
+      <End Role="Organisation" EntitySet="Organisation" />
+      <End Role="BookkeeperBill" EntitySet="BookkeeperBill" />
+    </AssociationSet>
+    <AssociationSet Name="FK_City_Country" Association="Self.FK_City_Country">
+      <End Role="Country" EntitySet="Country" />
+      <End Role="City" EntitySet="City" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Street_City" Association="Self.FK_Street_City">
+      <End Role="City" EntitySet="City" />
+      <End Role="Street" EntitySet="Street" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Client_Country" Association="Self.FK_Client_Country">
+      <End Role="Country" EntitySet="Country" />
+      <End Role="Client" EntitySet="Client" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Client_Organisation" Association="Self.FK_Client_Organisation">
+      <End Role="Organisation" EntitySet="Organisation" />
+      <End Role="Client" EntitySet="Client" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Client_SocialSecType" Association="Self.FK_Client_SocialSecType">
+      <End Role="SocialSecType" EntitySet="SocialSecType" />
+      <End Role="Client" EntitySet="Client" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_Client" Association="Self.FK_Order_Client">
+      <End Role="Client" EntitySet="Client" />
+      <End Role="Order" EntitySet="Order" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CompleteService_RecyclerWork" Association="Self.FK_CompleteService_RecyclerWork">
+      <End Role="RecyclerWork" EntitySet="RecyclerWork" />
+      <End Role="CompleteService" EntitySet="CompleteService" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CompleteService_Service" Association="Self.FK_CompleteService_Service">
+      <End Role="Service" EntitySet="Service" />
+      <End Role="CompleteService" EntitySet="CompleteService" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employee_User" Association="Self.FK_Employee_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Employee" EntitySet="Employee" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EnterHistory_User" Association="Self.FK_EnterHistory_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="EnterHistory" EntitySet="EnterHistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ExplorerEmployee_User" Association="Self.FK_ExplorerEmployee_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="ExplorerEmployee" EntitySet="ExplorerEmployee" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_StatusId" Association="Self.FK_Order_StatusId">
+      <End Role="StatusId" EntitySet="StatusId" />
+      <End Role="Order" EntitySet="Order" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderService_Order" Association="Self.FK_OrderService_Order">
+      <End Role="Order" EntitySet="Order" />
+      <End Role="OrderService" EntitySet="OrderService" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderService_Service" Association="Self.FK_OrderService_Service">
+      <End Role="Service" EntitySet="Service" />
+      <End Role="OrderService" EntitySet="OrderService" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderService_StatusId" Association="Self.FK_OrderService_StatusId">
+      <End Role="StatusId" EntitySet="StatusId" />
+      <End Role="OrderService" EntitySet="OrderService" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RecyclerWork_Recycler" Association="Self.FK_RecyclerWork_Recycler">
+      <End Role="Recycler" EntitySet="Recycler" />
+      <End Role="RecyclerWork" EntitySet="RecyclerWork" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserService_Service" Association="Self.FK_UserService_Service">
+      <End Role="Service" EntitySet="Service" />
+      <End Role="UserService" EntitySet="UserService" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserService_User" Association="Self.FK_UserService_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="UserService" EntitySet="UserService" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

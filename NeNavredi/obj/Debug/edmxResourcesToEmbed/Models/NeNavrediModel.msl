@@ -1,0 +1,251 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище NeNavrediModelContainer" CdmEntityContainer="NeNavrediEntities">
+    <EntitySetMapping Name="Address">
+      <EntityTypeMapping TypeName="NeNavrediModel.Address">
+        <MappingFragment StoreEntitySet="Address">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="HouseNum" ColumnName="HouseNum" />
+          <ScalarProperty Name="StreetId" ColumnName="StreetId" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Admin">
+      <EntityTypeMapping TypeName="NeNavrediModel.Admin">
+        <MappingFragment StoreEntitySet="Admin">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Bookkeeper">
+      <EntityTypeMapping TypeName="NeNavrediModel.Bookkeeper">
+        <MappingFragment StoreEntitySet="Bookkeeper">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="Patromonic" ColumnName="Patromonic" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BookkeeperBill">
+      <EntityTypeMapping TypeName="NeNavrediModel.BookkeeperBill">
+        <MappingFragment StoreEntitySet="BookkeeperBill">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="BookkeeperId" ColumnName="BookkeeperId" />
+          <ScalarProperty Name="OrganisationId" ColumnName="OrganisationId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="City">
+      <EntityTypeMapping TypeName="NeNavrediModel.City">
+        <MappingFragment StoreEntitySet="City">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Client">
+      <EntityTypeMapping TypeName="NeNavrediModel.Client">
+        <MappingFragment StoreEntitySet="Client">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="Patronomic" ColumnName="Patronomic" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+          <ScalarProperty Name="PassportNumber" ColumnName="PassportNumber" />
+          <ScalarProperty Name="PassportSerial" ColumnName="PassportSerial" />
+          <ScalarProperty Name="OrganisationId" ColumnName="OrganisationId" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+          <ScalarProperty Name="Guid" ColumnName="Guid" />
+          <ScalarProperty Name="Ein" ColumnName="Ein" />
+          <ScalarProperty Name="SocialSecNumber" ColumnName="SocialSecNumber" />
+          <ScalarProperty Name="SecialSecTypeId" ColumnName="SecialSecTypeId" />
+          <ScalarProperty Name="IpAddress" ColumnName="IpAddress" />
+          <ScalarProperty Name="Ua" ColumnName="Ua" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CompleteService">
+      <EntityTypeMapping TypeName="NeNavrediModel.CompleteService">
+        <MappingFragment StoreEntitySet="CompleteService">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ServiceId" ColumnName="ServiceId" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="RecyclerWorkId" ColumnName="RecyclerWorkId" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Country">
+      <EntityTypeMapping TypeName="NeNavrediModel.Country">
+        <MappingFragment StoreEntitySet="Country">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employee">
+      <EntityTypeMapping TypeName="NeNavrediModel.Employee">
+        <MappingFragment StoreEntitySet="Employee">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="Patronomic" ColumnName="Patronomic" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EnterHistory">
+      <EntityTypeMapping TypeName="NeNavrediModel.EnterHistory">
+        <MappingFragment StoreEntitySet="EnterHistory">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="IpAddress" ColumnName="IpAddress" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Succes" ColumnName="Succes" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ExplorerEmployee">
+      <EntityTypeMapping TypeName="NeNavrediModel.ExplorerEmployee">
+        <MappingFragment StoreEntitySet="ExplorerEmployee">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="Patronomic" ColumnName="Patronomic" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Order">
+      <EntityTypeMapping TypeName="NeNavrediModel.Order">
+        <MappingFragment StoreEntitySet="Order">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="ClientId" ColumnName="ClientId" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrderService">
+      <EntityTypeMapping TypeName="NeNavrediModel.OrderService">
+        <MappingFragment StoreEntitySet="OrderService">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+          <ScalarProperty Name="ServiceId" ColumnName="ServiceId" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Organisation">
+      <EntityTypeMapping TypeName="NeNavrediModel.Organisation">
+        <MappingFragment StoreEntitySet="Organisation">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="AddressId" ColumnName="AddressId" />
+          <ScalarProperty Name="Tin" ColumnName="Tin" />
+          <ScalarProperty Name="Bill" ColumnName="Bill" />
+          <ScalarProperty Name="Bik" ColumnName="Bik" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Recycler">
+      <EntityTypeMapping TypeName="NeNavrediModel.Recycler">
+        <MappingFragment StoreEntitySet="Recycler">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RecyclerWork">
+      <EntityTypeMapping TypeName="NeNavrediModel.RecyclerWork">
+        <MappingFragment StoreEntitySet="RecyclerWork">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="RecyclerId" ColumnName="RecyclerId" />
+          <ScalarProperty Name="DateStart" ColumnName="DateStart" />
+          <ScalarProperty Name="DateEnd" ColumnName="DateEnd" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Service">
+      <EntityTypeMapping TypeName="NeNavrediModel.Service">
+        <MappingFragment StoreEntitySet="Service">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="AvarageDeviation" ColumnName="AvarageDeviation" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SocialSecType">
+      <EntityTypeMapping TypeName="NeNavrediModel.SocialSecType">
+        <MappingFragment StoreEntitySet="SocialSecType">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StatusId">
+      <EntityTypeMapping TypeName="NeNavrediModel.StatusId">
+        <MappingFragment StoreEntitySet="StatusId">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Street">
+      <EntityTypeMapping TypeName="NeNavrediModel.Street">
+        <MappingFragment StoreEntitySet="Street">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User">
+      <EntityTypeMapping TypeName="NeNavrediModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserService">
+      <EntityTypeMapping TypeName="NeNavrediModel.UserService">
+        <MappingFragment StoreEntitySet="UserService">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ServiceId" ColumnName="ServiceId" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
