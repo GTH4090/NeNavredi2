@@ -26,6 +26,7 @@ namespace NeNavredi.Classes
 
         public static DispatcherTimer LogoutTimer = new DispatcherTimer() { Interval = new TimeSpan(0, 2, 0),};
 
+
         public static void LogoutTimer_Tick(object sender, EventArgs e)
         {
             
