@@ -99,6 +99,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\EnterHistoryPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\ExpEmploueeMenu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -208,6 +212,9 @@
     </Compile>
     <Compile Include="Pages\EmployeeMenu.xaml.cs">
       <DependentUpon>EmployeeMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\EnterHistoryPage.xaml.cs">
+      <DependentUpon>EnterHistoryPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\ExpEmploueeMenu.xaml.cs">
       <DependentUpon>ExpEmploueeMenu.xaml</DependentUpon>

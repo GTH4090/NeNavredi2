@@ -21,7 +21,7 @@
         </StackPanel>
 
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1">
-            <Button x:Name="TakeBtn" Content="Контроль истории входа" Width="Auto"/>
+            <Button x:Name="TakeBtn" Content="Контроль истории входа" Width="Auto" Click="TakeBtn_Click"/>
             <Button x:Name="reportBtn" Content="Отчёт"/>
             <Button x:Name="MAterialsBtn" Content="Расходные материалы"/>
         </StackPanel>

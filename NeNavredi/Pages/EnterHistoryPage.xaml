@@ -1,0 +1,46 @@
+﻿<Page
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:NeNavredi.Pages"
+      xmlns:Models="clr-namespace:NeNavredi.Models" x:Class="NeNavredi.Pages.EnterHistoryPage"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Контроль истории входа" Loaded="Page_Loaded">
+
+    <Page.Resources>
+        <CollectionViewSource x:Key="enterHistoryViewSource" d:DesignSource="{d:DesignInstance {x:Type Models:EnterHistory}}"/>
+    </Page.Resources>
+
+    <Grid DataContext="{StaticResource enterHistoryViewSource}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <GroupBox Header="Фильтрация по логину">
+                <TextBox x:Name="LoginSearchTbx" TextChanged="LoginSearchBtn_TextChanged"/>
+            </GroupBox>
+            <GroupBox Header="Сортировка по дате">
+                <ComboBox x:Name="SortCbx" SelectionChanged="SortCbx_SelectionChanged">
+                    <ComboBoxItem Content="По возрастанию"/>
+                    <ComboBoxItem Content="По убыванию"/>
+                </ComboBox>
+            </GroupBox>
+        </StackPanel>
+
+
+        <DataGrid x:Name="enterHistoryDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" RowDetailsVisibilityMode="VisibleWhenSelected" IsReadOnly="True" Grid.Row="1">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="dateColumn" Binding="{Binding Date}" Header="Date" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="ipAddressColumn" Binding="{Binding IpAddress}" Header="Ip Address" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="loginColumn" Binding="{Binding Login}" Header="Login" Width="SizeToHeader"/>
+                <DataGridCheckBoxColumn x:Name="succesColumn" Binding="{Binding Succes}" Header="Succes" Width="SizeToHeader"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+
+    </Grid>
+</Page>
