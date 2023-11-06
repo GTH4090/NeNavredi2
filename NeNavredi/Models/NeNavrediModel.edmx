@@ -134,6 +134,7 @@
           <Property Name="Time" Type="int" Nullable="false" />
           <Property Name="ClientId" Type="int" Nullable="false" />
           <Property Name="IsDeleted" Type="bit" />
+          <Property Name="Code" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="OrderService">
           <Key>
@@ -793,6 +794,7 @@
           <NavigationProperty Name="Client" Relationship="Self.FK_Order_Client" FromRole="Order" ToRole="Client" />
           <NavigationProperty Name="StatusId1" Relationship="Self.FK_Order_StatusId" FromRole="Order" ToRole="StatusId" />
           <NavigationProperty Name="OrderService" Relationship="Self.FK_OrderService_Order" FromRole="Order" ToRole="OrderService" />
+          <Property Name="Code" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="OrderService">
           <Key>
@@ -1460,6 +1462,7 @@
           <EntitySetMapping Name="Order">
             <EntityTypeMapping TypeName="NeNavrediModel.Order">
               <MappingFragment StoreEntitySet="Order">
+                <ScalarProperty Name="Code" ColumnName="Code" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Date" ColumnName="Date" />
                 <ScalarProperty Name="StatusId" ColumnName="StatusId" />

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NeNavredi.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -134,9 +135,16 @@ namespace NeNavredi.Pages
                         }
                     }
 
+                    EnterHistory enter = new EnterHistory();
+                    enter.Date = DateTime.Now;
+                    enter.IpAddress = "123.123.5.3";
+                    enter.Login = LoginTbx.Text;
+
                     if(Db.User.FirstOrDefault(el => el.Login == LoginTbx.Text && el.Password == PasswordTbx.Text) != null)
                     {
                         var item = Db.User.FirstOrDefault(el => el.Login == LoginTbx.Text && el.Password == PasswordTbx.Text);
+                        enter.Succes = true;
+                        enter.User = item;
                         LoginedUs = item;
                         if(item.Employee != null)
                         {
@@ -157,12 +165,16 @@ namespace NeNavredi.Pages
                     }
                     else
                     {
+                        enter.Succes = false;
+                        
                         Info("Не правильный логин или пароль");
                         isCapcha = true;
                         CanLogin = false;
                         timer.Start();
                         capcha();
                     }
+                    Db.EnterHistory.Add(enter);
+                    Db.SaveChanges();
                 }
                 else
                 {

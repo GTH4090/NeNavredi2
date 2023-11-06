@@ -134,6 +134,7 @@
     <EntitySetMapping Name="Order">
       <EntityTypeMapping TypeName="NeNavrediModel.Order">
         <MappingFragment StoreEntitySet="Order">
+          <ScalarProperty Name="Code" ColumnName="Code" />
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Date" ColumnName="Date" />
           <ScalarProperty Name="StatusId" ColumnName="StatusId" />

@@ -26,6 +26,7 @@ namespace NeNavredi.Models
         public int Time { get; set; }
         public int ClientId { get; set; }
         public Nullable<bool> IsDeleted { get; set; }
+        public int Code { get; set; }
     
         public virtual Client Client { get; set; }
         public virtual StatusId StatusId1 { get; set; }

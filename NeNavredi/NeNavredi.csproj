@@ -72,6 +72,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Classes\Client.cs" />
     <Compile Include="Classes\Helper.cs" />
     <Compile Include="Classes\User.cs" />
     <Compile Include="MainWindow.xaml.cs">
@@ -90,11 +91,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\ClientEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\EmployeeMenu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\ExpEmploueeMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PdfOrder.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\TakeWaste.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -190,11 +203,20 @@
     <Compile Include="Pages\BookkeeperMenu.xaml.cs">
       <DependentUpon>BookkeeperMenu.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\ClientEdit.xaml.cs">
+      <DependentUpon>ClientEdit.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\EmployeeMenu.xaml.cs">
       <DependentUpon>EmployeeMenu.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\ExpEmploueeMenu.xaml.cs">
       <DependentUpon>ExpEmploueeMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PdfOrder.xaml.cs">
+      <DependentUpon>PdfOrder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\TakeWaste.xaml.cs">
+      <DependentUpon>TakeWaste.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -221,6 +243,29 @@
       <DependentUpon>NeNavrediModel.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\NeNavredi.Models.Address.datasource" />
+    <None Include="Properties\DataSources\NeNavredi.Models.Admin.datasource" />
+    <None Include="Properties\DataSources\NeNavredi.Models.Bookkeeper.datasource" />
+    <None Include="Properties\DataSources\NeNavredi.Models.BookkeeperBill.datasource" />
+    <None Include="Properties\DataSources\NeNavredi.Models.City.datasource" />
+    <None Include="Properties\DataSources\NeNavredi.Models.Client.datasource" />
+    <None Include="Properties\DataSources\NeNavredi.Models.CompleteService.datasource" />
+    <None Include="Properties\DataSources\NeNavredi.Models.Country.datasource" />
+    <None Include="Properties\DataSources\NeNavredi.Models.Employee.datasource" />
+    <None Include="Properties\DataSources\NeNavredi.Models.EnterHistory.datasource" />
+    <None Include="Properties\DataSources\NeNavredi.Models.ExplorerEmployee.datasource" />
+    <None Include="Properties\DataSources\NeNavredi.Models.NeNavrediEntities.datasource" />
+    <None Include="Properties\DataSources\NeNavredi.Models.Order.datasource" />
+    <None Include="Properties\DataSources\NeNavredi.Models.OrderService.datasource" />
+    <None Include="Properties\DataSources\NeNavredi.Models.Organisation.datasource" />
+    <None Include="Properties\DataSources\NeNavredi.Models.Recycler.datasource" />
+    <None Include="Properties\DataSources\NeNavredi.Models.RecyclerWork.datasource" />
+    <None Include="Properties\DataSources\NeNavredi.Models.Service.datasource" />
+    <None Include="Properties\DataSources\NeNavredi.Models.SocialSecType.datasource" />
+    <None Include="Properties\DataSources\NeNavredi.Models.StatusId.datasource" />
+    <None Include="Properties\DataSources\NeNavredi.Models.Street.datasource" />
+    <None Include="Properties\DataSources\NeNavredi.Models.User.datasource" />
+    <None Include="Properties\DataSources\NeNavredi.Models.UserService.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -238,6 +283,7 @@
     <Resource Include="Images\1.png" />
     <Resource Include="Images\2.png" />
     <Resource Include="Images\3.png" />
+    <Resource Include="Images\Снимок экрана 2023-11-03 142044.png" />
     <Content Include="Models\NeNavrediModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>NeNavrediModel.Context.cs</LastGenOutput>

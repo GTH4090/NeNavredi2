@@ -29,13 +29,8 @@ namespace NeNavredi.Classes
 
         public static void LogoutTimer_Tick(object sender, EventArgs e)
         {
-            
-            calloginTimer.Interval = new TimeSpan(0, 1, 0);
-            calloginTimer.Tick += CalloginTimer_Tick;
-            CanLogin = false;
-            LoginedUs = null;
-            MainMainFrame.Navigate(new Auth());
-            calloginTimer.Start();
+
+            LogoutTimer.Stop();
         }
 
         private static void CalloginTimer_Tick(object sender, EventArgs e)

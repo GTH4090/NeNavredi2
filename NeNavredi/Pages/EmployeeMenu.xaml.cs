@@ -52,5 +52,10 @@ namespace NeNavredi.Pages
             NameLb.Content = LoginedUs.Name;
 
         }
+
+        private void TakeBtn_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new TakeWaste());
+        }
     }
 }

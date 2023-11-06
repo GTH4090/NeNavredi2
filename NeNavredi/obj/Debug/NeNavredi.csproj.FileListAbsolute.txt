@@ -31,3 +31,9 @@ E:\HACKERMAN\Repos\NeNavredi\NeNavredi\obj\Debug\NeNavredi.csproj.CoreCompileInp
 E:\HACKERMAN\Repos\NeNavredi\NeNavredi\obj\Debug\NeNavredi.csproj.CopyComplete
 E:\HACKERMAN\Repos\NeNavredi\NeNavredi\obj\Debug\NeNavredi.exe
 E:\HACKERMAN\Repos\NeNavredi\NeNavredi\obj\Debug\NeNavredi.pdb
+E:\HACKERMAN\Repos\NeNavredi\NeNavredi\obj\Debug\Pages\TakeWaste.g.cs
+E:\HACKERMAN\Repos\NeNavredi\NeNavredi\obj\Debug\Pages\ClientEdit.g.cs
+E:\HACKERMAN\Repos\NeNavredi\NeNavredi\obj\Debug\Pages\TakeWaste.baml
+E:\HACKERMAN\Repos\NeNavredi\NeNavredi\obj\Debug\Pages\ClientEdit.baml
+E:\HACKERMAN\Repos\NeNavredi\NeNavredi\obj\Debug\Pages\PdfOrder.g.cs
+E:\HACKERMAN\Repos\NeNavredi\NeNavredi\obj\Debug\Pages\PdfOrder.baml

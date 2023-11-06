@@ -152,6 +152,7 @@
     <NavigationProperty Name="Client" Relationship="Self.FK_Order_Client" FromRole="Order" ToRole="Client" />
     <NavigationProperty Name="StatusId1" Relationship="Self.FK_Order_StatusId" FromRole="Order" ToRole="StatusId" />
     <NavigationProperty Name="OrderService" Relationship="Self.FK_OrderService_Order" FromRole="Order" ToRole="OrderService" />
+    <Property Name="Code" Type="Int32" Nullable="false" />
   </EntityType>
   <EntityType Name="OrderService">
     <Key>

@@ -129,6 +129,7 @@
     <Property Name="Time" Type="int" Nullable="false" />
     <Property Name="ClientId" Type="int" Nullable="false" />
     <Property Name="IsDeleted" Type="bit" />
+    <Property Name="Code" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="OrderService">
     <Key>

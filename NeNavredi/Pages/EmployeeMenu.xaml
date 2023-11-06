@@ -23,7 +23,7 @@
         </StackPanel>
 
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1">
-            <Button x:Name="TakeBtn" Content="Принять отходы"/>
+            <Button x:Name="TakeBtn" Content="Принять отходы" Click="TakeBtn_Click"/>
             <Button x:Name="reportBtn" Content="Отчёт"/>
         </StackPanel>
     </Grid>
