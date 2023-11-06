@@ -1,0 +1,38 @@
+﻿<Page x:Class="NeNavredi.Pages.OrganisationBill"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:NeNavredi.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Счёт предприятию" Loaded="Page_Loaded">
+
+    <Grid x:Name="MainGrid">
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <GroupBox Header="Предприятие">
+                <ComboBox x:Name="OrganisationCbx" DisplayMemberPath="Name" SelectionChanged="OrganisationCbx_SelectionChanged"/>
+            </GroupBox>
+            <GroupBox Header="Период для оплаты">
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="С" Width="Auto"/>
+                    <DatePicker x:Name="FromDp" SelectedDateChanged="FromDp_SelectedDateChanged"/>
+                    <Label Content="по" Width="Auto"/>
+                    <DatePicker x:Name="ToDp" SelectedDateChanged="ToDp_SelectedDateChanged"/>
+                </StackPanel>
+            </GroupBox>
+            
+            <DataGrid x:Name="ServiceDg" AutoGenerateColumns="False" IsReadOnly="True" Height="100">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Название" Binding="{Binding Service.Name}"/>
+                    <DataGridTextColumn Header="Цена" Binding="{Binding Service.Price}"/>
+
+                </DataGrid.Columns>
+            </DataGrid>
+            <GroupBox Header="Финальная цена">
+                <Label Name="FinalPriceLb"/>
+            </GroupBox>
+            <Button x:Name="OkBtn" Content="Ок" Click="OkBtn_Click"/>
+        </StackPanel>
+    </Grid>
+</Page>

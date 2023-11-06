@@ -87,7 +87,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\BillPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\BookkeeperMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\ClientBill.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -104,6 +112,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\ExpEmploueeMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\OrganisationBill.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -204,8 +216,14 @@
     <Compile Include="Pages\Auth.xaml.cs">
       <DependentUpon>Auth.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\BillPage.xaml.cs">
+      <DependentUpon>BillPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\BookkeeperMenu.xaml.cs">
       <DependentUpon>BookkeeperMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ClientBill.xaml.cs">
+      <DependentUpon>ClientBill.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\ClientEdit.xaml.cs">
       <DependentUpon>ClientEdit.xaml</DependentUpon>
@@ -218,6 +236,9 @@
     </Compile>
     <Compile Include="Pages\ExpEmploueeMenu.xaml.cs">
       <DependentUpon>ExpEmploueeMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\OrganisationBill.xaml.cs">
+      <DependentUpon>OrganisationBill.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\PdfOrder.xaml.cs">
       <DependentUpon>PdfOrder.xaml</DependentUpon>

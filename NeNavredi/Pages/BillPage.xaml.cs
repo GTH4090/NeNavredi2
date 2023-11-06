@@ -12,30 +12,27 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using static NeNavredi.Classes.Helper;
-
 
 namespace NeNavredi.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для BookkeeperMenu.xaml
+    /// Логика взаимодействия для BillPage.xaml
     /// </summary>
-    public partial class BookkeeperMenu : Page
+    public partial class BillPage : Page
     {
-        public BookkeeperMenu()
+        public BillPage()
         {
             InitializeComponent();
         }
 
-        private void Page_Loaded(object sender, RoutedEventArgs e)
+        private void OrganisationBtn_Click(object sender, RoutedEventArgs e)
         {
-            NameLb.Content = LoginedUs.Name;
-
+            NavigationService.Navigate(new OrganisationBill());
         }
 
-        private void TakeBtn_Click(object sender, RoutedEventArgs e)
+        private void ClientBtn_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new BillPage());
+            NavigationService.Navigate(new ClientBill());
         }
     }
 }

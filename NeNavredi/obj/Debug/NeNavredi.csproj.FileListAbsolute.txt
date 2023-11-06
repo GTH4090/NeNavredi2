@@ -39,3 +39,7 @@ E:\HACKERMAN\Repos\NeNavredi\NeNavredi\obj\Debug\Pages\PdfOrder.g.cs
 E:\HACKERMAN\Repos\NeNavredi\NeNavredi\obj\Debug\Pages\PdfOrder.baml
 E:\HACKERMAN\Repos\NeNavredi\NeNavredi\obj\Debug\Pages\EnterHistoryPage.g.cs
 E:\HACKERMAN\Repos\NeNavredi\NeNavredi\obj\Debug\Pages\EnterHistoryPage.baml
+E:\HACKERMAN\Repos\NeNavredi\NeNavredi\obj\Debug\Pages\BillPage.g.cs
+E:\HACKERMAN\Repos\NeNavredi\NeNavredi\obj\Debug\Pages\OrganisationBill.g.cs
+E:\HACKERMAN\Repos\NeNavredi\NeNavredi\obj\Debug\Pages\BillPage.baml
+E:\HACKERMAN\Repos\NeNavredi\NeNavredi\obj\Debug\Pages\OrganisationBill.baml
